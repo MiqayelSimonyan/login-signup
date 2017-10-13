@@ -1,0 +1,48 @@
+@import '../../../../assets/sass/_variables.scss';
+@import '../../../../assets/sass/_mixins.scss';
+
+.form_wrapper {
+	font-family: $font-family;
+    width: 980px;
+    margin: 0 auto;
+	.form_title {
+		text-align: center;
+	}
+	form {
+		width: 100%;
+		.form_item_group {
+			margin-bottom: 10px;
+			label {
+				font-size: 15px;
+			    margin-bottom: 5px;
+			    display: block;
+			}
+			input {
+				@include border-radius(5px);
+				padding: 10px;
+			    min-width: 300px;
+			    width: 100%;			    
+			    box-shadow: none;
+			    border: 1px solid #4d6154;
+			    font-size: 15px;
+			    box-sizing: border-box;
+			}
+			.form_error_wrapper {
+				color: $error-color;
+			}
+			.form_submit_btn {
+				@include border-radius(5px);
+				border: 0;
+			    background: $submit-background;
+			    color: $submit-color;
+			    padding: 10px;
+			    min-width: 322px;
+			    width: 100%;
+			    min-height: 39px;
+				margin-top: 10px;
+				font-size: 16px;
+				cursor: pointer;
+			}
+		}
+	}
+}

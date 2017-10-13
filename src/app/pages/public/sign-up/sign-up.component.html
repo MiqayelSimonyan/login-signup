@@ -1,0 +1,61 @@
+<toaster-container></toaster-container>
+<div class="form_wrapper">
+	<div class="form_title">
+		<h2>Sign Up</h2>
+	</div>
+	<form [formGroup]="signUpForm" (ngSubmit)="signUp(signUpForm.value)" novalidate>
+		<div class="form_item_group">
+			<div>
+				<label for="name">Name:</label>
+			</div>
+			<input class="form_item" id="name" formControlName="name" placeholder="name" />
+			<div class="form_error_wrapper" *ngIf="signUpForm.controls['name'].errors && (signUpForm.controls['name'].touched || submitted)">
+				<div [hidden]="!signUpForm.controls['name'].errors.required">
+					Required field
+				</div>
+			</div>
+		</div>
+		<div class="form_item_group">
+			<div>
+				<label for="username">Username:</label>
+			</div>
+			<input class="form_item" id="username" formControlName="username" placeholder="username" />
+			<div class="form_error_wrapper" *ngIf="signUpForm.controls['username'].errors && (signUpForm.controls['username'].touched || submitted)">
+				<div [hidden]="!signUpForm.controls['username'].errors.required">
+					Required field
+				</div>
+				<div [hidden]="!signUpForm.controls['username'].errors.maxlength">
+					Username cannot be more than 125 characters long.
+				</div>
+			</div>
+		</div>
+		<div class="form_item_group">
+			<div>
+				<label for="email">Email:</label>
+			</div>
+			<input class="form_item" id="email" formControlName="email" placeholder="email" />
+			<div class="form_error_wrapper" *ngIf="signUpForm.controls['email'].errors && (signUpForm.controls['email'].touched || submitted)">
+				<div [hidden]="!signUpForm.controls['email'].errors.required">
+					Required field
+				</div>
+				<div [hidden]="!signUpForm.controls['email'].errors.validateEmail">
+					E-mail address is incorrect
+				</div>
+			</div>
+		</div>
+		<div class="form_item_group">
+			<div>
+				<label for="password">Password:</label>
+			</div>
+			<input class="form_item" id="password" formControlName="password" placeholder="password" type="password" />
+			<div class="form_error_wrapper" *ngIf="signUpForm.controls['password'].errors && (signUpForm.controls['password'].touched || submitted)">
+				<div [hidden]="!signUpForm.controls['password'].errors.required">
+					Required field
+				</div>
+			</div>
+		</div>
+		<div class="form_item_group">
+			<button class="form_submit_btn">Sign Up</button>
+		</div>
+	</form>
+</div>

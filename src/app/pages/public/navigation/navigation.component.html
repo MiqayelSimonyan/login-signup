@@ -1,0 +1,19 @@
+<nav class="navigation">
+	<ul>
+		<li class="navigation_item">
+			<a [routerLink]="['/']" routerLinkActive="navigation_active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+		</li>
+		<li class="navigation_item" *ngIf="isAuth()">
+			<a [routerLink]="['/user']" routerLinkActive="navigation_active">My Account</a>
+		</li>
+		<li class="navigation_item" *ngIf="!isAuth()">
+			<a [routerLink]="['/signUp']" routerLinkActive="navigation_active">Sign Up</a>
+		</li>
+		<li class="navigation_item" *ngIf="!isAuth()">
+			<a [routerLink]="['/login']" routerLinkActive="navigation_active">Login</a>
+		</li>
+		<li *ngIf="isAuth()" class="navigation_item logOut">
+			<a href="/auth/signout" (click)="logOut()">Sign Out</a>
+		</li>
+	</ul>
+</nav>

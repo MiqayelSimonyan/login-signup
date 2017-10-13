@@ -1,0 +1,34 @@
+@import '../../../../assets/sass/_variables.scss';
+@import '../../../../assets/sass/_mixins.scss';
+
+.navigation {
+	background: #98962c;
+	overflow: hidden;	
+    font-family: tahoma;
+	ul {
+		margin: 0;	
+		.navigation_item {
+			list-style: none;
+	    	float: left;
+	    	.navigation_active {
+				background: $nav-active;
+			}
+			a {
+				color: $link-color;
+			    text-decoration: none;
+			    display: block;
+			    padding: 12px 10px;
+			}
+		}
+		.navigation_home_item {			
+			a {
+				padding-top: 6px;
+    			padding-bottom: 4px;
+			}
+		}
+		.logOut {
+			float: right;
+			margin-right: 20px;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+@import '../../node_modules/angular2-toaster/toaster';
+@import '../assets/sass/_variables.scss';
+@import '../assets/sass/_mixins.scss';
+
+html, body {
+	font-family: $font-family;
+	margin: 0
+}
