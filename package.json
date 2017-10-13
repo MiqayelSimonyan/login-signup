@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"npm run build\" \"nodemon app.js --exec babel-node\"",
-    "nodemon": "concurrently \"npm run build\" \"babel-node app.js\"",
+    "start": "concurrently \"npm run build\" \"babel-node app.js\"",
+    "nodemon": "concurrently \"npm run build\" \"nodemon app.js --exec babel-node\"",    
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
