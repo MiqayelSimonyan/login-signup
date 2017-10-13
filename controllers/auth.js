@@ -22,17 +22,17 @@ router.post('/', (req, res) => {
 });
 
 router.post('/signup', (req, res, next) => {
-    if (!/[a-zA-Z\s]{3,40}/.test(req.body.name))  return res.send({
+    if (!/[a-zA-Z\s]{3,40}/.test(req.body.name))  return next({
         status: 'error',
         message: 'Username is incorrect'
     });
 
-    if (!/\S+@\S+\.\S+/.test(req.body.email))  return res.send({
+    if (!/\S+@\S+\.\S+/.test(req.body.email))  return next({
         status: 'error',
         message: 'E-mail address is incorrect'
     });
 
-    if (!/[^\\s]{3,40}/.test(req.body.password))  return res.send({
+    if (!/[^\\s]{3,40}/.test(req.body.password))  return next({
         status: 'error',
         message: 'Password is incorrect'
     });
