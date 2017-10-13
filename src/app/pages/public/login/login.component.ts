@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
 		  			if (!result.success) throw new Error(result.message);
 		  			Auth.authenticate('username', result.data.username);
 		  			this.toasterService.pop('success', result.message);
-	  				this.router.navigate(['/user']);
+	  				setTimeout(() => this.router.navigate(['/user']), 500);
 	        	})
 		  		.catch(err => {
 		  			this.toasterService.pop('error', err.json().message);
