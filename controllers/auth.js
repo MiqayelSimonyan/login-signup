@@ -22,7 +22,6 @@ router.post('/', (req, res) => {
 });
 
 router.post('/signup', (req, res, next) => {
-    console.log('req.body', req.body);
     if (!/[a-zA-Z\s]{3,40}/.test(req.body.name))  return res.send({
         status: 'error',
         message: 'Username is incorrect'
